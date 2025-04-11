@@ -36,6 +36,16 @@ export default class Md2bb extends Parser {
         replacement: '$1[h1]$3[/h1]',
       },
       {
+        name: 'subheader',
+        regex: /(\n|^)(#{2})[ ](.*)/g,
+        replacement: '$1[h2]$3[/h2]',
+      },
+      {
+        name: 'subsubheader',
+        regex: /(\n|^)(#{3})[ ](.*)/g,
+        replacement: '$1[h3]$3[/h3]',
+      },
+      {
         name: 'link',
         regex: /\[([^\[]+)\]\(([^\)]+)\)/g,
         replacement: "[url=$2]$1[/url]",
